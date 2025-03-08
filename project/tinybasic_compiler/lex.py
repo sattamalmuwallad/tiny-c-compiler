@@ -16,7 +16,12 @@ class Lexer:
 
     # Return the lookahead character.
     def peek(self):
-        pass
+        if self.curpos + 1 >= len(self.source):
+            return "\0"
+        else: 
+            return self.source[self.curpos + 1] 
+        # we will stop here for today
+        
 
     # Invalid token found, print error message and exit.
     def abort(self, message):
